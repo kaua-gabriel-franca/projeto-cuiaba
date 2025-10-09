@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Completo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="criar -conta.css">
+</head>
+<body>
+    <div class="background-overlay">
+        <div class="background-pattern"></div>
+        <div class="floating-elements">
+            <div class="floating-element">📱</div>
+            <div class="floating-element">📧</div>
+            <div class="floating-element">👤</div>
+            <div class="floating-element">🔒</div>
+            <div class="floating-element">🎂</div>
+            <div class="floating-element">🔑</div>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <button class="theme-toggle-login" onclick="toggleTheme()">☀️</button>
+        
+        <div class="login-header">
+            <h1>Criar Conta</h1>
+            <p>Preencha todos os campos para continuar</p>
+        </div>
+
+        <form id="accountForm">
+            <div class="form-group">
+                <label for="fullName">Nome Completo</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Telefone ou Email</label>
+                <input type="text" id="contact" name="contact" placeholder="Seu telefone ou email" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="day">Dia</label>
+                    <input type="number" id="day" name="day" placeholder="DD" min="1" max="31" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="month">Mês</label>
+                    <input type="number" id="month" name="month" placeholder="MM" min="1" max="12" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Ano</label>
+                    <input type="number" id="year" name="year" placeholder="AAAA" min="1920" max="2024" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Criar Senha</label>
+                <input type="password" id="password" name="password" placeholder="Crie uma senha segura" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar Senha</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required>
+            </div>
+
+            <div class="form-group">
+                <label>Gênero</label>
+                <div class="gender-options">
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="masculino" required> Masculino
+                    </label>
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="feminino" required> Feminino
+                    </label>
+                    <label class="gender-option">
+                        <input type="radio" name="gender" value="outros" required> Outros
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-login">Criar Conta</button>
+        </form>
+
+        <a href="#" class="back-link">← Voltar para login</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,4 +1,3 @@
-<!-- login.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,226 +6,28 @@
     <title>login - Cuiabá Sabor & Cultura</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        :root {
-            --font-primary: 'Montserrat', sans-serif;
-            --font-secondary: 'Playfair Display', serif;
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 0.75rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 3rem;
-            --spacing-xl: 4.5rem;
-            --border-radius: 6px;
-            --transition: all 0.3s ease;
-            --shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-            --shadow-lg: 0 6px 18px rgba(0, 0, 0, 0.3);
-            
-            /* Rustic Theme */
-            --bg-primary: #6d2e1c;
-            --bg-secondary: #8b4513;
-            --text-primary: #f5f0e6;
-            --text-secondary: #d7ccc8;
-            --accent-primary: #d7ccc8;
-            --accent-secondary: #bcaaa4;
-            --card-bg: #4a2318;
-            --header-bg: rgba(109, 46, 28, 0.95);
-            --footer-bg: #3e2723;
-            --footer-text: #f5f0e6;
-            --button-hover: #5d4037;
-            --input-border: #5d4037;
-            --input-focus: #d7ccc8;
-        }
-
-        .dark-theme {
-            /* Dark Rustic Theme */
-            --bg-primary: #261a15;
-            --bg-secondary: #33261f;
-            --text-primary: #f5f0e6;
-            --text-secondary: #d7ccc8;
-            --accent-primary: #d7ccc8;
-            --accent-secondary: #bcaaa4;
-            --card-bg: #2f211b;
-            --header-bg: rgba(38, 26, 21, 0.95);
-            --footer-bg: #1a0f0c;
-            --footer-text: #d7ccc8;
-            --button-hover: #bcaaa4;
-            --input-border: #5d4037;
-            --input-focus: #d7ccc8;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-primary);
-            background-color: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            transition: var(--transition);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: var(--spacing-md);
-        }
-
-        .login-container {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-lg);
-            padding: var(--spacing-xl);
-            width: 100%;
-            max-width: 500px;
-            border: 2px solid var(--accent-secondary);
-            position: relative;
-        }
-
-        .theme-toggle-login {
-            position: absolute;
-            top: var(--spacing-sm);
-            right: var(--spacing-sm);
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--text-primary);
-            font-size: 1.2rem;
-            transition: var(--transition);
-            padding: 5px;
-            border-radius: 50%;
-            border: 1px solid var(--accent-secondary);
-        }
-
-        .theme-toggle-login:hover {
-            color: var(--accent-primary);
-            background-color: rgba(215, 204, 200, 0.1);
-        }
-
-        .login-header {
-            text-align: center;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .login-header h1 {
-            font-family: var(--font-secondary);
-            font-size: 2rem;
-            color: var(--accent-primary);
-            margin-bottom: var(--spacing-sm);
-            letter-spacing: 1px;
-        }
-
-        .login-header p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-xs);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .form-group label {
-            font-weight: 500;
-            color: var(--text-primary);
-            font-family: var(--font-secondary);
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-        }
-
-        .form-group input {
-            padding: var(--spacing-sm);
-            border: 1px solid var(--input-border);
-            border-radius: var(--border-radius);
-            font-family: var(--font-primary);
-            font-size: 0.95rem;
-            background-color: rgba(255, 255, 255, 0.12);
-            color: var(--text-primary);
-            transition: var(--transition);
-        }
-
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--input-focus);
-            box-shadow: 0 0 0 2px rgba(215, 204, 200, 0.3);
-        }
-
-        .btn {
-            padding: 0.35rem 0.7rem;
-            border: 1px solid var(--accent-primary);
-            border-radius: var(--border-radius);
-            font-family: var(--font-primary);
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            letter-spacing: 0.2px;
-            background-color: transparent;
-            color: var(--text-primary);
-            font-size: 0.85rem;
-            width: 100%;
-            margin-top: var(--spacing-md);
-        }
-
-        .btn-login {
-            background-color: var(--accent-primary);
-            color: var(--bg-primary);
-            border-color: var(--accent-primary);
-        }
-
-        .btn-login:hover {
-            background-color: var(--button-hover);
-            border-color: var(--button-hover);
-        }
-
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: var(--spacing-md);
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .back-link:hover {
-            color: var(--accent-secondary);
-            text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 480px) {
-            .login-container {
-                padding: var(--spacing-lg);
-            }
-            
-            .login-header h1 {
-                font-size: 1.6rem;
-            }
-            
-            .btn {
-                padding: 0.5rem;
-                font-size: 0.9rem;
-            }
-            
-            .theme-toggle-login {
-                top: var(--spacing-xs);
-                right: var(--spacing-xs);
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
+    <!-- Full page background -->
+    <div class="background-overlay">
+        <div class="background-pattern"></div>
+        <div class="floating-elements">
+            <div class="floating-element">☕</div>
+            <div class="floating-element">🌿</div>
+            <div class="floating-element">🌶️</div>
+            <div class="floating-element">🍯</div>
+        </div>
+    </div>
+    
+    <!-- Login container -->
     <div class="login-container">
         <button class="theme-toggle-login" id="themeToggleLogin">
             <i class="material-icons">light_mode</i>
         </button>
         
         <div class="login-header">
-            <h1>Faça Login</h1>
+            <h1>Fazer login</h1>
             <p>Preencha seus dados para criar sua conta</p>
         </div>
         
@@ -240,8 +41,14 @@
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
             </div>
-            <button type="submit" class="btn btn-login">Cadastrar</button>
+            
+            <button type="submit" class="btn btn-login">faça login</button>
         </form>
+        
+        <div class="toggle-section">
+            <p>Não tem uma conta?</p>
+            <a href="criar-conta.html" class="toggle-link">clique aqui para criar uma conta</a>
+        </div>
         
         <a href="index.html" class="back-link">← Voltar para a página principal</a>
     </div>
@@ -281,7 +88,6 @@
                 // Get form values
                 const name = document.getElementById('name').value.trim();
                 const email = document.getElementById('email').value.trim();
-                const phone = document.getElementById('phone').value.trim();
                 
                 // Basic validation
                 let isValid = true;
@@ -300,14 +106,6 @@
                     errorMessage += 'Por favor, insira um email válido.\n';
                 }
                 
-                if (phone === '') {
-                    isValid = false;
-                    errorMessage += 'Por favor, preencha o número de telefone.\n';
-                } else if (!isValidPhone(phone)) {
-                    isValid = false;
-                    errorMessage += 'Por favor, insira um número de telefone válido.\n';
-                }
-                
                 if (!isValid) {
                     alert(errorMessage);
                     return;
@@ -322,13 +120,6 @@
         function isValidEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
-        }
-        
-        function isValidPhone(phone) {
-            // Remove all non-digit characters
-            const phoneDigits = phone.replace(/\D/g, '');
-            // Check if it has 10 or 11 digits (with or without 9)
-            return phoneDigits.length >= 10 && phoneDigits.length <= 11;
         }
     </script>
 </body>
