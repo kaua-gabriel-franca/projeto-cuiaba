@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,7 +6,7 @@
     <title>Cuiabá Sabor & Cultura</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Header -->
@@ -34,7 +33,7 @@
         </div>
     </header>
 
-    <!-- Hero Section - Now with the requested image -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Descubra o Coração do Brasil</h1>
@@ -53,6 +52,17 @@
                         <div class="content">
                             <h3>Pintado na Telha</h3>
                             <p>Tradicional prato cuiabano preparado com peixe da região, temperos locais e servido em telha de barro.</p>
+                            <div class="item-actions">
+                                <button class="action-btn favorite-btn" title="Favoritar">
+                                    <i class="material-icons">favorite_border</i>
+                                </button>
+                                <button class="action-btn cart-btn" title="Adicionar ao carrinho">
+                                    <i class="material-icons">shopping_cart</i>
+                                </button>
+                                <button class="action-btn details-btn" title="Ver detalhes">
+                                    <i class="material-icons">visibility</i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,6 +74,17 @@
                         <div class="content">
                             <h3>Moqueca Cuiabana</h3>
                             <p>Deliciosa moqueca preparada com peixes de água doce, leite de coco e temperos regionais.</p>
+                            <div class="item-actions">
+                                <button class="action-btn favorite-btn" title="Favoritar">
+                                    <i class="material-icons">favorite_border</i>
+                                </button>
+                                <button class="action-btn cart-btn" title="Adicionar ao carrinho">
+                                    <i class="material-icons">shopping_cart</i>
+                                </button>
+                                <button class="action-btn details-btn" title="Ver detalhes">
+                                    <i class="material-icons">visibility</i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -75,6 +96,17 @@
                         <div class="content">
                             <h3>Bolinho de Arroz com Pequi</h3>
                             <p>Combinação perfeita de arroz com o fruto típico do Cerrado, o pequi, criando um sabor inconfundível.</p>
+                            <div class="item-actions">
+                                <button class="action-btn favorite-btn" title="Favoritar">
+                                    <i class="material-icons">favorite_border</i>
+                                </button>
+                                <button class="action-btn cart-btn" title="Adicionar ao carrinho">
+                                    <i class="material-icons">shopping_cart</i>
+                                </button>
+                                <button class="action-btn details-btn" title="Ver detalhes">
+                                    <i class="material-icons">visibility</i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -86,6 +118,17 @@
                         <div class="content">
                             <h3>Arroz de Carreteiro</h3>
                             <p>Prato tradicional feito com carne seca, linguiça e arroz, representando a culinária dos tropeiros.</p>
+                            <div class="item-actions">
+                                <button class="action-btn favorite-btn" title="Favoritar">
+                                    <i class="material-icons">favorite_border</i>
+                                </button>
+                                <button class="action-btn cart-btn" title="Adicionar ao carrinho">
+                                    <i class="material-icons">shopping_cart</i>
+                                </button>
+                                <button class="action-btn details-btn" title="Ver detalhes">
+                                    <i class="material-icons">visibility</i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -97,6 +140,17 @@
                         <div class="content">
                             <h3>Guaraná Nativo</h3>
                             <p>Bebida refrescante feita com o fruto nativo do Cerrado, com sabor único e propriedades energéticas.</p>
+                            <div class="item-actions">
+                                <button class="action-btn favorite-btn" title="Favoritar">
+                                    <i class="material-icons">favorite_border</i>
+                                </button>
+                                <button class="action-btn cart-btn" title="Adicionar ao carrinho">
+                                    <i class="material-icons">shopping_cart</i>
+                                </button>
+                                <button class="action-btn details-btn" title="Ver detalhes">
+                                    <i class="material-icons">visibility</i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -108,6 +162,17 @@
                         <div class="content">
                             <h3>Cachaça Artisanal</h3>
                             <p>Destilado tradicional produzido artesanalmente com cana-de-açúcar da região, com sabores únicos.</p>
+                            <div class="item-actions">
+                                <button class="action-btn favorite-btn" title="Favoritar">
+                                    <i class="material-icons">favorite_border</i>
+                                </button>
+                                <button class="action-btn cart-btn" title="Adicionar ao carrinho">
+                                    <i class="material-icons">shopping_cart</i>
+                                </button>
+                                <button class="action-btn details-btn" title="Ver detalhes">
+                                    <i class="material-icons">visibility</i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -232,6 +297,16 @@
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
+                    <label for="subject">Assunto</label>
+                    <select id="subject" name="subject" required>
+                        <option value="">Selecione um assunto</option>
+                        <option value="informacao">Informações Gerais</option>
+                        <option value="parceria">Parcerias</option>
+                        <option value="sugestao">Sugestões</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="message">Mensagem</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
@@ -243,10 +318,10 @@
     <!-- Footer -->
     <footer>
         <div class="social-icons">
-            <i class="material-icons">facebook</i>
-            <i class="material-icons">instagram</i>
-            <i class="material-icons">twitter</i>
-            <i class="material-icons">email</i>
+            <a href="#"><i class="material-icons">facebook</i></a>
+            <a href="#"><i class="material-icons">instagram</i></a>
+            <a href="#"><i class="material-icons">twitter</i></a>
+            <a href="#"><i class="material-icons">email</i></a>
         </div>
         <p>&copy; 2024 Cuiabá Sabor & Cultura. Todos os direitos reservados.</p>
         <p>Contato: contato@cuiabasaborecultura.com.br | (65) 99999-9999</p>
