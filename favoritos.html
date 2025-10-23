@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Favoritos - Cuiabá Sabor & Cultura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/favoritos.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Cuiabá Sabor & Cultura</a>
+            <nav class="nav-menu">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#gastronomia">Gastronomia</a>
+                <a href="index.html#cultura">Cultura</a>
+                <a href="index.html#contato">Contato</a>
+            </nav>
+            <div class="header-right">
+                <div class="profile-icon">👤</div>
+                <button class="theme-toggle">
+                    <i class="material-icons">light_mode</i>
+                </button>
+                <a href="index.html" class="btn btn-login">Voltar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="favorites-container">
+        <h1 class="page-title">Meus Favoritos</h1>
+        <div id="favorites-list" class="favorites-grid">
+            <!-- Itens serão inseridos dinamicamente -->
+        </div>
+        <div id="empty-message" class="empty-message">
+            Nenhum item favoritado ainda. 😢
+        </div>
+    </main>
+
+    <script src="javascript.js"></script>
+</body>
+</html>

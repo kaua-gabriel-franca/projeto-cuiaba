@@ -396,6 +396,115 @@ function initSmoothScroll() {
   });
 }
 
+// =============== PÁGINA DE FAVORITOS ===============
+function initFavoritesPage() {
+    const favoritesList = document.getElementById('favorites-list');
+    const emptyMessage = document.getElementById('empty-message');
+
+    if (!favoritesList) return; // Só executa se estiver na página de favoritos
+
+    const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+    const items = [
+        {
+            id: 'fav_0',
+            title: "Pintado na Telha",
+            image: "https://i.pinimg.com/736x/a8/60/24/a86024c5a45b8430f1193c13b159bd8c.jpg",
+            description: "Tradicional prato cuiabano preparado com peixe da região, temperos locais e servido em telha de barro."
+        },
+        {
+            id: 'fav_1',
+            title: "Moqueca Cuiabana",
+            image: "https://i.pinimg.com/736x/f7/95/17/f795174cc2d38a0020dc824064d5bb03.jpg",
+            description: "Deliciosa moqueca preparada com peixes de água doce, leite de coco e temperos regionais."
+        },
+        {
+            id: 'fav_2',
+            title: "Bolinho de Arroz com Pequi",
+            image: "https://i.pinimg.com/1200x/0a/0f/f4/0a0ff448b1e25e1f430e8073674f6dac.jpg",
+            description: "Combinação perfeita de arroz com o fruto típico do Cerrado, o pequi, criando um sabor inconfundível."
+        },
+        {
+            id: 'fav_3',
+            title: "Arroz de Carreteiro",
+            image: "https://i.pinimg.com/736x/b6/b3/08/b6b308b2373229fa5dfc0228f4183cf0.jpg",
+            description: "Prato tradicional feito com carne seca, linguiça e arroz, representando a culinária dos tropeiros."
+        },
+        {
+            id: 'fav_4',
+            title: "Guaraná Nativo",
+            image: "https://i.pinimg.com/736x/7f/58/7a/7f587a7b220d6d27a6afe01474e6e891.jpg",
+            description: "Bebida refrescante feita com o fruto nativo do Cerrado, com sabor único e propriedades energéticas."
+        },
+        {
+            id: 'fav_5',
+            title: "Cachaça Artesanal",
+            image: "https://i.pinimg.com/1200x/a7/0e/66/a70e6611e19c001be91edf61ae73b110.jpg",
+            description: "Destilado tradicional produzido artesanalmente com cana-de-açúcar da região, com sabores únicos."
+        }
+    ];
+
+    const favoritedItems = items.filter(item => favorites.includes(item.id));
+
+    if (favoritedItems.length === 0) {
+        emptyMessage.style.display = 'block';
+        favoritesList.style.display = 'none';
+        return;
+    }
+
+    favoritesList.innerHTML = '';
+    favoritedItems.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'favorite-card';
+        card.innerHTML = `
+            <img src="${item.image}" alt="${item.title}" class="favorite-image">
+            <div class="favorite-content">
+                <h3>${item.title}</h3>
+                <p>${item.description}</p>
+                <div class="card-actions">
+                    <button class="action-btn add-to-cart" data-id="${item.id}">
+                        <i class="material-icons">shopping_cart</i> Carrinho
+                    </button>
+                    <button class="action-btn remove-favorite" data-id="${item.id}">
+                        <i class="material-icons">delete</i> Remover
+                    </button>
+                </div>
+            </div>
+        `;
+        favoritesList.appendChild(card);
+    });
+
+    // Adicionar ao carrinho
+    document.querySelectorAll('.add-to-cart').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+            const key = btn.dataset.id.replace('fav_', 'cart_');
+            if (!cart.includes(key)) {
+                cart.push(key);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert('Adicionado ao carrinho!');
+                // Atualiza contador no header (se estiver na index)
+                const counter = document.getElementById('cartCounter');
+                if (counter) counter.textContent = cart.length;
+            }
+        });
+    });
+
+    // Remover dos favoritos
+    document.querySelectorAll('.remove-favorite').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const id = btn.dataset.id;
+            let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+            favorites = favorites.filter(fav => fav !== id);
+            localStorage.setItem('favorites', JSON.stringify(favorites));
+            // Atualiza contador no header
+            const counter = document.getElementById('favoritesCounter');
+            if (counter) counter.textContent = favorites.length;
+            // Atualiza página
+            initFavoritesPage();
+        });
+    });
+}
+
 // =============== INICIALIZAÇÃO GERAL ===============
 document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
@@ -405,4 +514,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initAccountForm();
   initModal();
   initSmoothScroll();
+  initFavoritesPage();
 });
