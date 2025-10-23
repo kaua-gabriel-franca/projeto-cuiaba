@@ -140,6 +140,11 @@ body.dark-theme .login-header p {
     margin-bottom: 8px;
     font-weight: 500;
     font-size: 14px;
+    color: #333;
+}
+
+body.dark-theme .form-group label {
+    color: #F5F5DC;
 }
 
 .form-group input {
@@ -167,6 +172,7 @@ body.dark-theme .form-group input:focus {
     border-color: #F4A460;
 }
 
+/* Estilo para botões */
 .btn {
     width: 100%;
     padding: 14px;
@@ -196,26 +202,6 @@ body.dark-theme .form-group input:focus {
     transform: translateY(0);
 }
 
-.btn-login-alt {
-    background: transparent;
-    color: #8B4513;
-    border: 2px solid #8B4513;
-}
-
-body.dark-theme .btn-login-alt {
-    color: #F4A460;
-    border-color: #F4A460;
-}
-
-.btn-login-alt:hover {
-    background: rgba(139, 69, 19, 0.1);
-    transform: translateY(-2px);
-}
-
-body.dark-theme .btn-login-alt:hover {
-    background: rgba(244, 164, 96, 0.1);
-}
-
 .back-link {
     display: block;
     text-align: center;
@@ -239,6 +225,7 @@ body.dark-theme .back-link:hover {
     color: #FFD700;
 }
 
+/* Seção de alternância (login ↔ cadastro) */
 .toggle-section {
     text-align: center;
     margin-top: 20px;
@@ -278,4 +265,26 @@ body.dark-theme .toggle-link {
 
 body.dark-theme .toggle-link:hover {
     color: #FFD700;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+
+    .login-header h1 {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .theme-toggle-login {
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+    }
 }

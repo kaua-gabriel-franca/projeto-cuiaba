@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login - Cuiabá Sabor & Cultura</title>
+    <title>Fazer Login - Cuiabá Sabor & Cultura</title>
+    <!-- Fontes e ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS da página de login -->
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <!-- Full page background -->
+    <!-- Fundo decorativo -->
     <div class="background-overlay">
         <div class="background-pattern"></div>
         <div class="floating-elements">
@@ -19,108 +21,41 @@
             <div class="floating-element">🍯</div>
         </div>
     </div>
-    
-    <!-- Login container -->
+
+    <!-- Container do formulário -->
     <div class="login-container">
-        <button class="theme-toggle-login" id="themeToggleLogin">
+        <!-- Botão de alternância de tema (padrão unificado) -->
+        <button class="theme-toggle-login">
             <i class="material-icons">light_mode</i>
         </button>
-        
+
         <div class="login-header">
-            <h1>Fazer login</h1>
-            <p>Preencha seus dados para criar sua conta</p>
+            <h1>Fazer Login</h1>
+            <p>Insira suas credenciais para acessar sua conta</p>
         </div>
-        
+
+        <!-- Formulário de login -->
         <form id="loginForm">
             <div class="form-group">
-                <label for="name">Nome Completo</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
             </div>
-            
-            <button type="submit" class="btn btn-login">faça login</button>
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Sua senha" required>
+            </div>
+            <button type="submit" class="btn btn-login">Entrar</button>
         </form>
-        
+
         <div class="toggle-section">
             <p>Não tem uma conta?</p>
-            <a href="criar-conta.html" class="toggle-link">clique aqui para criar uma conta</a>
+            <a href="criar-conta.html" class="toggle-link">Clique aqui para criar uma conta</a>
         </div>
-        
+
         <a href="index.html" class="back-link">← Voltar para a página principal</a>
     </div>
 
-    <script>
-        // Theme Toggle Functionality for Login Page
-        const themeToggleLogin = document.getElementById('themeToggleLogin');
-        const icon = themeToggleLogin.querySelector('i');
-        
-        // Check for saved theme preference or default to light
-        const currentTheme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-        
-        // Set initial icon
-        updateThemeIcon(currentTheme);
-        
-        themeToggleLogin.addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-            const isDark = document.body.classList.contains('dark-theme');
-            updateThemeIcon(isDark ? 'dark' : 'light');
-        });
-        
-        function updateThemeIcon(theme) {
-            if (theme === 'dark') {
-                icon.textContent = 'dark_mode';
-            } else {
-                icon.textContent = 'light_mode';
-            }
-        }
-        
-        // Form validation for login/cadastro page
-        const loginForm = document.getElementById('loginForm');
-        
-        if (loginForm) {
-            loginForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form values
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                
-                // Basic validation
-                let isValid = true;
-                let errorMessage = '';
-                
-                if (name === '') {
-                    isValid = false;
-                    errorMessage += 'Por favor, preencha o nome completo.\n';
-                }
-                
-                if (email === '') {
-                    isValid = false;
-                    errorMessage += 'Por favor, preencha o email.\n';
-                } else if (!isValidEmail(email)) {
-                    isValid = false;
-                    errorMessage += 'Por favor, insira um email válido.\n';
-                }
-                
-                if (!isValid) {
-                    alert(errorMessage);
-                    return;
-                }
-                
-                // If valid, show success message
-                alert('Cadastro realizado com sucesso! Bem-vindo ao Cuiabá Sabor & Cultura.');
-                loginForm.reset();
-            });
-        }
-        
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-    </script>
+    <!-- Script centralizado -->
+    <script src="javascript.js"></script>
 </body>
 </html>

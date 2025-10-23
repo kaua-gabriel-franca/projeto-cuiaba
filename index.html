@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuiabá Sabor & Cultura</title>
+    <!-- Fontes e ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CSS principal -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="#" class="logo">Cuiabá Sabor & Cultura</a>
-            
+            <a href="#home" class="logo">Cuiabá Sabor & Cultura</a>
             <nav class="nav-menu">
                 <a href="#home">Home</a>
                 <a href="#gastronomia">Gastronomia</a>
                 <a href="#cultura">Cultura</a>
                 <a href="#contato">Contato</a>
             </nav>
-            
             <div class="header-right">
                 <div class="profile-icon">👤</div>
-                <button class="theme-toggle" id="themeToggle">
+                <button class="theme-toggle">
                     <i class="material-icons">light_mode</i>
                 </button>
+                <a href="#" class="header-icon" id="favoritesHeader" title="Favoritos">
+                    <i class="material-icons">favorite_border</i>
+                    <span class="counter" id="favoritesCounter">0</span>
+                </a>
+                <a href="#" class="header-icon" id="cartHeader" title="Carrinho">
+                    <i class="material-icons">shopping_cart</i>
+                    <span class="counter" id="cartCounter">0</span>
+                </a>
                 <div class="auth-buttons">
-                    <a class="btn btn-login" href='login.html'>Login</a>
+                    <a class="btn btn-login" href="login.html">Login</a>
                 </div>
             </div>
         </div>
@@ -45,6 +53,7 @@
     <section class="section" id="gastronomia">
         <h2 class="section-title">Gastronomia Cuiabana</h2>
         <div class="grid-container">
+            <!-- Item 1 -->
             <div class="grid-item">
                 <div class="image-wrapper">
                     <img src="https://i.pinimg.com/736x/a8/60/24/a86024c5a45b8430f1193c13b159bd8c.jpg" alt="Pintado na Telha">
@@ -67,6 +76,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Item 2 -->
             <div class="grid-item">
                 <div class="image-wrapper">
                     <img src="https://i.pinimg.com/736x/f7/95/17/f795174cc2d38a0020dc824064d5bb03.jpg" alt="Moqueca Cuiabana">
@@ -89,6 +99,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Item 3 -->
             <div class="grid-item">
                 <div class="image-wrapper">
                     <img src="https://i.pinimg.com/1200x/0a/0f/f4/0a0ff448b1e25e1f430e8073674f6dac.jpg" alt="Bolinho de Arroz com Pequi">
@@ -111,6 +122,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Item 4 -->
             <div class="grid-item">
                 <div class="image-wrapper">
                     <img src="https://i.pinimg.com/736x/b6/b3/08/b6b308b2373229fa5dfc0228f4183cf0.jpg" alt="Arroz de Carreteiro">
@@ -133,6 +145,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Item 5 -->
             <div class="grid-item">
                 <div class="image-wrapper">
                     <img src="https://i.pinimg.com/736x/7f/58/7a/7f587a7b220d6d27a6afe01474e6e891.jpg" alt="Guaraná Nativo">
@@ -155,9 +168,10 @@
                     </div>
                 </div>
             </div>
+            <!-- Item 6 -->
             <div class="grid-item">
                 <div class="image-wrapper">
-                    <img src="https://i.pinimg.com/1200x/a7/0e/66/a70e6611e19c001be91edf61ae73b110.jpg" alt="Cachaça Artsanal">
+                    <img src="https://i.pinimg.com/1200x/a7/0e/66/a70e6611e19c001be91edf61ae73b110.jpg" alt="Cachaça Artesanal">
                     <div class="overlay">
                         <div class="content">
                             <h3>Cachaça Artesanal</h3>
@@ -319,15 +333,13 @@
     <footer>
         <div class="social-icons">
             <a href="#"><i class="material-icons">facebook</i></a>
-            <!-- <a href="#"><i class="material-icons">instagram</i></a>
-            <a href="#"><i class="material-icons">twitter</i></a> -->
-            
             <a href="#"><i class="material-icons">email</i></a>
         </div>
         <p>&copy; 2025 Cuiabá Sabor & Cultura. Todos os direitos reservados.</p>
         <p>Contato: contato@cuiabasaborecultura.com.br | (65) 99999-9999</p>
     </footer>
 
+    <!-- Script centralizado -->
     <script src="javascript.js"></script>
 </body>
 </html>

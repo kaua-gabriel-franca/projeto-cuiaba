@@ -1,4 +1,4 @@
-/* style.css */
+/* criar-conta.css */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +15,6 @@ body {
     position: relative;
     overflow: hidden;
     color: #333;
-    transition: background 0.3s ease, color 0.3s ease;
 }
 
 body.dark-theme {
@@ -59,12 +58,12 @@ body.dark-theme {
     animation: float 6s ease-in-out infinite;
 }
 
-.floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-.floating-element:nth-child(2) { top: 40%; left: 80%; animation-delay: 1s; }
-.floating-element:nth-child(3) { top: 70%; left: 20%; animation-delay: 2s; }
-.floating-element:nth-child(4) { top: 30%; left: 60%; animation-delay: 3s; }
-.floating-element:nth-child(5) { top: 10%; left: 70%; animation-delay: 4s; }
-.floating-element:nth-child(6) { top: 60%; left: 40%; animation-delay: 5s; }
+.floating-element:nth-child(1) { top: 15%; left: 15%; animation-delay: 0s; }
+.floating-element:nth-child(2) { top: 35%; left: 75%; animation-delay: 1s; }
+.floating-element:nth-child(3) { top: 65%; left: 25%; animation-delay: 2s; }
+.floating-element:nth-child(4) { top: 25%; left: 60%; animation-delay: 3s; }
+.floating-element:nth-child(5) { top: 50%; left: 40%; animation-delay: 4s; }
+.floating-element:nth-child(6) { top: 80%; left: 70%; animation-delay: 5s; }
 
 @keyframes float {
     0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -77,17 +76,15 @@ body.dark-theme {
     border-radius: 20px;
     padding: 40px;
     width: 100%;
-    max-width: 450px;
+    max-width: 480px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     z-index: 10;
     backdrop-filter: blur(10px);
-    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 body.dark-theme .login-container {
     background: rgba(40, 30, 20, 0.95);
     color: #F5F5DC;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
 .theme-toggle-login {
@@ -99,7 +96,7 @@ body.dark-theme .login-container {
     cursor: pointer;
     font-size: 24px;
     color: #8B4513;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 body.dark-theme .theme-toggle-login {
@@ -121,7 +118,6 @@ body.dark-theme .theme-toggle-login {
     font-weight: 700;
     margin-bottom: 10px;
     color: #8B4513;
-    transition: color 0.3s ease;
 }
 
 body.dark-theme .login-header h1 {
@@ -131,7 +127,6 @@ body.dark-theme .login-header h1 {
 .login-header p {
     font-size: 14px;
     color: #666;
-    transition: color 0.3s ease;
 }
 
 body.dark-theme .login-header p {
@@ -142,23 +137,16 @@ body.dark-theme .login-header p {
     margin-bottom: 20px;
 }
 
-.form-row {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.form-row .form-group {
-    margin-bottom: 0;
-    flex: 1;
-}
-
 .form-group label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
     font-size: 14px;
-    transition: color 0.3s ease;
+    color: #333;
+}
+
+body.dark-theme .form-group label {
+    color: #F5F5DC;
 }
 
 .form-group input {
@@ -168,7 +156,7 @@ body.dark-theme .login-header p {
     border-radius: 10px;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
-    transition: border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
 body.dark-theme .form-group input {
@@ -186,25 +174,48 @@ body.dark-theme .form-group input:focus {
     border-color: #F4A460;
 }
 
-.gender-options {
+/* Estilo para campos de data (linha com 3 inputs) */
+.form-row {
     display: flex;
-    gap: 15px;
-    margin-top: 8px;
+    gap: 12px;
+    margin-bottom: 20px;
 }
 
-.gender-option {
+.form-row .form-group {
+    margin-bottom: 0;
     flex: 1;
 }
 
-.gender-option input[type="radio"] {
-    margin-right: 8px;
-    accent-color: #8B4513;
+.form-row input {
+    text-align: center;
 }
 
-body.dark-theme .gender-option input[type="radio"] {
-    accent-color: #F4A460;
+/* Estilo para opções de gênero */
+.gender-options {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
 }
 
+.gender-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+body.dark-theme .gender-option {
+    color: #F5F5DC;
+}
+
+.gender-option input {
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Botões */
 .btn {
     width: 100%;
     padding: 14px;
@@ -222,16 +233,12 @@ body.dark-theme .gender-option input[type="radio"] {
 .btn-login {
     background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
     color: white;
-    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 .btn-login:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
-}
-
-body.dark-theme .btn-login:hover {
-    box-shadow: 0 5px 15px rgba(244, 164, 96, 0.4);
 }
 
 .btn-login:active {
@@ -241,7 +248,7 @@ body.dark-theme .btn-login:hover {
 .back-link {
     display: block;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 25px;
     color: #8B4513;
     text-decoration: none;
     font-size: 14px;
@@ -259,4 +266,22 @@ body.dark-theme .back-link {
 
 body.dark-theme .back-link:hover {
     color: #FFD700;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .gender-options {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
