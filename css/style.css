@@ -241,6 +241,10 @@ header {
     box-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
+#cartCounter {
+    background-color: #4CAF50;
+}
+
 /* Estilo para o carrinho (opcional: cor diferente) */
 #cartCounter {
     background-color: #4CAF50;
@@ -669,6 +673,21 @@ footer {
   transform: scale(1.15);
   background-color: rgba(215, 204, 200, 0.15);
 }
+
+.header-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+    border-radius: 50%;
+}
+
+
 
 /* =============== Responsividade =============== */
 @media (max-width: 768px) {
