@@ -285,3 +285,11 @@ body.dark-theme .back-link:hover {
         gap: 10px;
     }
 }
+
+/* Ícone do botão de tema */
+.theme-toggle-login i {
+    transition: color 0.3s ease;
+}
+body.dark-theme .theme-toggle-login i {
+    color: #F4A460;
+}
