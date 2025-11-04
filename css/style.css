@@ -687,6 +687,92 @@ footer {
     border-radius: 50%;
 }
 
+/* Menu de Perfil Dropdown */
+.profile-dropdown {
+    position: relative;
+    display: none; /* Escondido por padrão */
+}
+
+.profile-dropdown.active {
+    display: block;
+}
+
+.profile-trigger {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--accent-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-primary);
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid var(--accent-primary);
+    font-size: 0.75rem;
+    transition: transform 0.2s;
+}
+
+.profile-trigger:hover {
+    transform: scale(1.1);
+}
+
+.profile-menu {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    width: 200px;
+    z-index: 1001;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+}
+
+.profile-dropdown:hover .profile-menu,
+.profile-menu:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.profile-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--accent-secondary);
+    background: rgba(215, 204, 200, 0.08);
+    font-weight: 600;
+    color: var(--accent-primary);
+    font-size: 0.95rem;
+}
+
+.profile-option {
+    width: 100%;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s;
+}
+
+.profile-option:hover {
+    background: rgba(215, 204, 200, 0.15);
+}
+
+.profile-option i {
+    font-size: 1.1rem;
+}
+
 
 
 /* =============== Responsividade =============== */

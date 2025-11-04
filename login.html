@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fazer Login - Cuiabá Sabor & Cultura</title>
-    <!-- Fontes e ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- CSS da página de login -->
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <!-- Fundo decorativo -->
     <div class="background-overlay">
         <div class="background-pattern"></div>
         <div class="floating-elements">
@@ -21,24 +18,18 @@
             <div class="floating-element">🍯</div>
         </div>
     </div>
-
-    <!-- Container do formulário -->
     <div class="login-container">
-        <!-- Botão de alternância de tema (padrão unificado) -->
         <button class="theme-toggle-login">
             <i class="material-icons">light_mode</i>
         </button>
-
         <div class="login-header">
             <h1>Fazer Login</h1>
-            <p>Insira suas credenciais para acessar sua conta</p>
+            <p>Insira seu email/telefone e senha</p>
         </div>
-
-        <!-- Formulário de login -->
         <form id="loginForm">
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                <label for="contact">Email ou Telefone</label>
+                <input type="text" id="contact" name="contact" placeholder="Seu email ou telefone" required>
             </div>
             <div class="form-group">
                 <label for="password">Senha</label>
@@ -46,16 +37,12 @@
             </div>
             <button type="submit" class="btn btn-login">Entrar</button>
         </form>
-
         <div class="toggle-section">
             <p>Não tem uma conta?</p>
-            <a href="criar-conta.html" class="toggle-link">Clique aqui para criar uma conta</a>
+            <a href="criar-conta.html" class="toggle-link">Clique aqui para criar</a>
         </div>
-
-        <a href="index.html" class="back-link">← Voltar para a página principal</a>
+        <a href="index.html" class="back-link">← Voltar</a>
     </div>
-
-    <!-- Script centralizado -->
     <script src="js/javascript.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/login.js"></script>
