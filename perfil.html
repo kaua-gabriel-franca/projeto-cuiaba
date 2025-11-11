@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Cuiabá Sabor & Cultura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">Cuiabá Sabor & Cultura</a>
+            <nav class="nav-menu">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#gastronomia">Gastronomia</a>
+                <a href="index.html#cultura">Cultura</a>
+                <a href="index.html#contato">Contato</a>
+            </nav>
+            <div class="header-right">
+                <div class="profile-trigger" id="profileTrigger">
+                    <span>👤</span>
+                </div>
+                <button class="theme-toggle">
+                    <i class="material-icons">light_mode</i>
+                </button>
+                <a href="index.html" class="btn btn-login">Voltar</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Perfil -->
+    <main class="profile-container">
+        <h1 class="page-title">Meu Perfil</h1>
+        <div class="profile-card">
+            <div class="profile-avatar">
+                <span id="avatarPlaceholder">👤</span>
+                <button class="btn-change-photo" id="changePhotoBtn">
+                    <i class="material-icons">camera_alt</i>
+                </button>
+            </div>
+            <div class="profile-info">
+                <div class="info-row">
+                    <strong>Nome Completo:</strong>
+                    <span id="profileFullName">Carregando...</span>
+                </div>
+                <div class="info-row">
+                    <strong>Email:</strong>
+                    <span id="profileEmail">—</span>
+                </div>
+                <div class="info-row">
+                    <strong>Telefone:</strong>
+                    <span id="profilePhone">—</span>
+                </div>
+                <div class="info-row">
+                    <strong>Data de Nascimento:</strong>
+                    <span id="profileBirthDate">—</span>
+                </div>
+                <div class="info-row">
+                    <strong>Gênero:</strong>
+                    <span id="profileGender">—</span>
+                </div>
+                <div class="info-row">
+                    <strong>Cadastrado em:</strong>
+                    <span id="profileCreatedAt">—</span>
+                </div>
+            </div>
+            <div class="profile-actions">
+                <button class="btn btn-edit" id="editProfileBtn">
+                    <i class="material-icons">edit</i> Editar Perfil
+                </button>
+                <button class="btn btn-logout" id="logoutBtn">
+                    <i class="material-icons">logout</i> Sair da Conta
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/javascript.js"></script>
+    <script src="js/perfil.js"></script>
+</body>
+</html>

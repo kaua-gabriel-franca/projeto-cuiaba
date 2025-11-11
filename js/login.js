@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const contact = document.getElementById("contact").value.trim();
     const password = document.getElementById("password").value.trim();
 
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // ✅ Busca por email ou phone (auth.js)
     const user = loginUser(contact, password);
     if (user) {
       setActiveUser(user);
